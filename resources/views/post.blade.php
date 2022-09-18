@@ -4,9 +4,10 @@
         <h3>
             {{ $post->title }}
         </h3>
-        <h5>By: Ryan fabella</h5>
-        <h5><a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }}</a></h5>
+        <h5>By: {{ $post->user->name }},
+        <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none"> {{ $post->category->name }}</a></h5>
         {!! $post->body !!}
     </article>
-    <a href="/posts">Balik</a>
+    <p></p>
+    <a href="/posts" class="text-decoration-none">Back to post</a>
 @endsection
