@@ -4,6 +4,7 @@ use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,4 @@ Route::get('/users/{user:username}', function(User $user)
         'posts' => $user->post
     ]);
 });
+Route::resource('roles', RoleController::class);
