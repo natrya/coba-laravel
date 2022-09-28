@@ -8,7 +8,7 @@
                     {{ $post->title }}
                 </a>
             </h3>
-            <h5>By: <a href="/users/{{ $post->user->username }}" class="text-decoration-none">{{ $post->user->name }}</a></h5>
+            <h5>By: <a href="/users/{{ $post->user->username }}" class="text-decoration-none">{{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->name }}" class="text-decoration-none">{{ $post->category->name }}</a></h5>
             <p>{{ $post->excerpt }}</p>
         </article>
     @endforeach

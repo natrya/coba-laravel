@@ -33,17 +33,16 @@ Route::get('/categories', function()
     ]);
 });
 Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name
+    return view('posts', [
+        'title' => "Post By Category : $category->name",
+        'posts' => $category->posts->load('category','user'),
     ]);
 });
 Route::get('/users/{user:username}', function(User $user)
 {
     return view('posts', [
-        'title' => 'Posts user',
-        'posts' => $user->post
+        'title' => "Posts By user : $user->name",
+        'posts' => $user->post->load('category','user')
     ]);
 });
 Route::resource('roles', RoleController::class);
